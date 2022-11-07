@@ -26,6 +26,7 @@
                 document.getElementById('validate').innerHTML = '';
             }
             changeAvatar.avatar = avatar;
+            console.log('data truoc --->', JSON.stringify(changeAvatar))
             $.ajax({
                 url: 'http://localhost:5000/api/auth/change/avatar',
                 method: 'PUT',
@@ -33,7 +34,7 @@
                 contentType: 'application/json; charset=UTF8',
                 headers : {'Authorization': 'Bearer'+window.localStorage.getItem('TOKEN_KEY')},
                 success: function (data) {
-                    console.log('data upload ---> ', data)
+                    console.log('data upload sau---> ', data)
                     document.getElementById('validate').innerHTML = 'Update Avatar success!'
                     window.localStorage.removeItem('AVATAR_KEY');
                     window.localStorage.setItem('AVATAR_KEY', avatar);
