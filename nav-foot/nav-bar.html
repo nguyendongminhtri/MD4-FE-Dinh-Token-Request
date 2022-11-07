@@ -21,6 +21,9 @@
         <a id="register" class="nav-link" href="/form-login/register.html">Register</a>
       </li>
       <li class="nav-item active">
+        <a id="login" class="nav-link" href="/form-login/login.html">Login</a>
+      </li>
+      <li class="nav-item active">
         <a id="name" class="nav-link" href="/form-login/register.html"></a>
       </li>
       <li class="nav-item">
@@ -48,6 +51,7 @@
 <script>
   if(window.localStorage.getItem('TOKEN_KEY')!==null){
     document.getElementById('register').innerHTML = '';
+    document.getElementById('login').innerHTML = '';
     document.getElementById('name').innerHTML = window.localStorage.getItem('NAME_KEY');
     document.getElementById('avatar').src = window.localStorage.getItem('AVATAR_KEY');
   }
