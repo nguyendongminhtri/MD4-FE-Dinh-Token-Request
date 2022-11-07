@@ -139,12 +139,14 @@
             signUpForm.password = $('#password').val();
             signUpForm.roles = ["admin"];
             let signUpFormOBJ = JSON.stringify(signUpForm);
+            console.log('data truoc --> ', signUpFormOBJ)
             $.ajax({
                 url: 'https://jav06.herokuapp.com/api/auth/signup',
                 data: signUpFormOBJ,
                 contentType: 'application/json; charset=UTF8',
                 method: 'POST',
                 success: function (data) {
+                    console.log('data sau--> ', data)
                     if (data.message === 'nouser') {
                         document.getElementById('validate').innerHTML = 'The username is existed! Please try again!'
                         return
