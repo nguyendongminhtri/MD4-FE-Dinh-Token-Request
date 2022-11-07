@@ -24,7 +24,10 @@
         <a id="login" class="nav-link" href="/form-login/login.html">Login</a>
       </li>
       <li class="nav-item active">
-        <a id="name" class="nav-link" href="/form-login/register.html"></a>
+        <a id="name" class="nav-link" href="/profile/profile.html"></a>
+      </li>
+      <li class="nav-item active">
+        <a id="log_out" class="nav-link" onclick="logOut()" ></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Link</a>
@@ -52,8 +55,13 @@
   if(window.localStorage.getItem('TOKEN_KEY')!==null){
     document.getElementById('register').innerHTML = '';
     document.getElementById('login').innerHTML = '';
+    document.getElementById('log_out').innerHTML = 'LOG OUT';
     document.getElementById('name').innerHTML = window.localStorage.getItem('NAME_KEY');
     document.getElementById('avatar').src = window.localStorage.getItem('AVATAR_KEY');
+  }
+  function logOut() {
+    window.localStorage.clear();
+    window.location.href = '../form-login/login.html';
   }
 </script>
 </body>
