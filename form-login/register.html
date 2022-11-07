@@ -141,7 +141,7 @@
             let signUpFormOBJ = JSON.stringify(signUpForm);
             console.log('data truoc --> ', signUpFormOBJ)
             $.ajax({
-                async: true,
+                async: false,
                 url: 'https://jav06.herokuapp.com/api/auth/signup',
                 data: signUpFormOBJ,
                 contentType: 'application/json; charset=UTF8',
