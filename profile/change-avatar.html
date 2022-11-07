@@ -28,7 +28,7 @@
             changeAvatar.avatar = avatar;
             console.log('data truoc --->', JSON.stringify(changeAvatar))
             $.ajax({
-                url: 'http://localhost:5000/api/auth/change/avatar',
+                url: 'https://jav06.herokuapp.com/api/auth/change/avatar',
                 method: 'PUT',
                 data: JSON.stringify(changeAvatar),
                 contentType: 'application/json; charset=UTF8',
