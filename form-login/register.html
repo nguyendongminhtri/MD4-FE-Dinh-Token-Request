@@ -22,7 +22,7 @@
                             <form>
                                 <label id="validate" style="color: red" class="form-label"></label>
                                 <div class="form-outline mb-4">
-                                    <input oninput="validate()" type="text" id="name"
+                                    <input oninput="validate()" type="text" id="names"
                                            class="form-control form-control-lg"/>
                                     <label id="validate_name" class="form-label">Your Name</label>
                                 </div>
@@ -42,7 +42,7 @@
                                 </div>
 
                                 <div class="form-outline mb-4">
-                                    <input oninput="validate()" type="text" id="repeat_pass" class="form-control form-control-lg"/>
+                                    <input oninput="validate()" type="password" id="repeat_pass" class="form-control form-control-lg"/>
                                     <label style="color: red" id="validate_repeat" class="form-label" >Repeat your password</label>
                                 </div>
 
@@ -86,13 +86,14 @@
     }
 
     function validate() {
-        let name = document.getElementById('name').value;
+        let names = document.getElementById('names').value;
         email = document.getElementById('email').value;
-        if (name.trim() === '') {
-            document.getElementById('validate_name').innerHTML = '<label style="color: red">The name is required!</label>'
+        console.log('leng -->', names.length)
+        if (names.trim() === '') {
+            document.getElementById('validate_name').innerHTML = '<label style="color: red">The names is required!</label>'
             return
-        } else if (name.length < 2 || name.length > 50) {
-            document.getElementById('validate_name').innerHTML = '<label style="color: red">The name is more less than 2 character or is more than 6 character</label>'
+        } else if (names.length < 2 || names.length > 50) {
+            document.getElementById('validate_name').innerHTML = '<label style="color: red">The names is more less than 2 character or is more than 6 character</label>'
             return;
         } else {
             document.getElementById('validate_name').innerHTML = ''
