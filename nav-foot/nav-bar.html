@@ -48,7 +48,8 @@
     document.getElementById('name').innerHTML = window.localStorage.getItem('NAME_KEY');
     document.getElementById('avatar').src = window.localStorage.getItem('AVATAR_KEY');
   } else {
-    document.getElementById('avatar').style.display = 'none';
+    let myPicture= document.getElementById('avatar');
+    myPicture.className = "disabled";
   }
   function logOut() {
     window.localStorage.clear();
