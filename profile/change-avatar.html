@@ -27,11 +27,11 @@
             }
             changeAvatar.avatar = avatar;
             $.ajax({
-                url: 'https://jav06.herokuapp.com/api/auth/change/avatar',
+                url: 'http://localhost:5000/api/auth/change/avatar',
                 method: 'PUT',
                 data: JSON.stringify(changeAvatar),
                 contentType: 'application/json; charset=UTF8',
-
+                headers : {'Authorization': 'Bearer'+window.localStorage.getItem('TOKEN_KEY')},
                 success: function (data) {
                     console.log('data upload ---> ', data)
                     document.getElementById('validate').innerHTML = 'Update Avatar success!'
