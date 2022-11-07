@@ -58,6 +58,8 @@
     document.getElementById('log_out').innerHTML = 'LOG OUT';
     document.getElementById('name').innerHTML = window.localStorage.getItem('NAME_KEY');
     document.getElementById('avatar').src = window.localStorage.getItem('AVATAR_KEY');
+  } else {
+    document.getElementById('avatar').style.display = 'none';
   }
   function logOut() {
     window.localStorage.clear();
