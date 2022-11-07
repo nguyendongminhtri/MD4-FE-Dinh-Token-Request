@@ -114,7 +114,7 @@
         if (password.trim() === '') {
             document.getElementById('validate_password').innerHTML = '<label style="color: red">The password is required!</label>'
             return
-        } else if (password.length < 2 || name.length > 50) {
+        } else if (password.length < 2 || password.length > 50) {
             document.getElementById('validate_password').innerHTML = '<label style="color: red">The password is more less than 2 character or is more than 6 character</label>'
             return;
         } else {
