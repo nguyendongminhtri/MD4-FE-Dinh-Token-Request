@@ -141,6 +141,7 @@
             let signUpFormOBJ = JSON.stringify(signUpForm);
             console.log('data truoc --> ', signUpFormOBJ)
             $.ajax({
+                async: true;
                 url: 'https://jav06.herokuapp.com/api/auth/signup',
                 data: signUpFormOBJ,
                 contentType: 'application/json; charset=UTF8',
@@ -149,13 +150,9 @@
                     console.log('data sau--> ', data)
                     if (data.message === 'nouser') {
                         document.getElementById('validate').innerHTML = 'The username is existed! Please try again!'
-                        return
-                    }
-                    if (data.message === 'noemail') {
+                    } else if (data.message === 'noemail') {
                         document.getElementById('validate').innerHTML = 'The email is existed! Please try again!'
-                        return
-                    }
-                    if (data.message === 'yes') {
+                    } else if (data.message === 'yes') {
                         document.getElementById('validate').innerHTML = 'Create success! ----> ' + '<a href="../form-login/login.html">Please Login!</a>'
                     }
                 }
